@@ -331,35 +331,35 @@ export const staticConventionsData: SessionData = {
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
       sessao: 'Vigência e Data-Base',
-      descricao: 'Estabelece período de vigência da CCT e data-base da categoria em 01 de maio. Aditivo 2024 válido até 30/04/2025.'
+      descricao: 'Estabelece período de vigência da CCT e data-base da categoria em 01 de maio. Termo Aditivo 2024 válido de 01/05/2024 a 30/04/2025.'
     },
     {
       id: 'ba-2',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Pisos Salariais',
-      descricao: '36h: R$ 1.461,12->1.512,00; 44h: R$ 1.502,00->1.554,00; Auxiliar Caixa Rápido: R$ 1.984,29 (valores atualizados pelo Aditivo 2024).'
+      sessao: 'Pisos Salariais (Atualizado 2024)',
+      descricao: '36h: R$ 1.512,00 (anteriormente R$ 1.461,12); 44h: R$ 1.554,00 (anteriormente R$ 1.502,00); Auxiliar Caixa Rápido: R$ 1.984,29. Valores atualizados pelo Termo Aditivo 2024.'
     },
     {
       id: 'ba-3',
       estado: 'BA',
-      data: '01/05/2023 a 30/04/2025',
-      sessao: 'Reajuste Salarial',
-      descricao: '3,5% sobre salários vigentes em 30/04/2024. Pagamento a partir de novembro/2024 com retroativo até janeiro/2025.'
+      data: '01/05/2024 a 30/04/2025',
+      sessao: 'Reajuste Salarial 2024',
+      descricao: '3,5% sobre salários vigentes em 30/04/2024. Pagamento obrigatório a partir de novembro/2024 com retroativo de 01/05/2024 até janeiro/2025.'
     },
     {
       id: 'ba-4',
       estado: 'BA',
-      data: '01/05/2023 a 30/04/2025',
-      sessao: 'Jornada de Trabalho',
-      descricao: '36h semanais para funções específicas (Help Desk, Telemarketing, etc.). 44h para demais trabalhadores. Regime 12x36 permitido.'
+      data: '01/05/2024 a 30/04/2025',
+      sessao: 'Vale Refeição/Alimentação (Atualizado 2024)',
+      descricao: '8h diárias: R$ 37,52/dia; 6h diárias: R$ 24,20/dia. Contribuição: piso R$ 1,00, acima do piso 10%. Valores atualizados pelo Termo Aditivo 2024.'
     },
     {
       id: 'ba-5',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Vale Refeição/Alimentação',
-      descricao: '8h diárias: R$ 37,52/dia; 6h diárias: R$ 24,20/dia. Contribuição: piso R$ 1,00, acima do piso 10%. Valores atualizados pelo Aditivo 2024.'
+      sessao: 'Jornada de Trabalho',
+      descricao: '36h semanais para funções específicas (Help Desk, Telemarketing, Digitador, Conferente, Auxiliar de Processamento, Auxiliar de Caixa Rápido). 44h para demais trabalhadores. Regime 12x36 permitido.'
     },
     {
       id: 'ba-6',
@@ -407,21 +407,21 @@ export const staticConventionsData: SessionData = {
       id: 'ba-12',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Faltas Justificadas',
-      descricao: '1 dia para internação de cônjuge/ascendente/descendente. 3 dias se localidade distante +100km. Comprovação até 48h após retorno.'
+      sessao: 'Ausências Legais',
+      descricao: '1 dia útil para internação de cônjuge/ascendente/descendente. 3 dias se localidade distante +100km. Comprovação até 48h após retorno.'
     },
     {
       id: 'ba-13',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Atestado Médico',
+      sessao: 'Controle Médico Ocupacional',
       descricao: 'Liberação de 1 dia no mês de aniversário do contrato para exames clínicos, oftalmológicos e musculoesqueléticos.'
     },
     {
       id: 'ba-14',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Complementação do Auxílio-Doença',
+      sessao: 'Auxílio Doença Previdenciário',
       descricao: 'Empréstimo até 1 salário pelos 30 dias após 16º dia. Empresa pode manter plano de saúde por 30 dias. Restituição em 30 dias.'
     },
     {
@@ -436,84 +436,105 @@ export const staticConventionsData: SessionData = {
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
       sessao: 'Garantia Pré-Aposentadoria',
-      descricao: 'Estabilidade de 12 meses anteriores à aposentadoria para empregados com mínimo 5 anos na empresa. Comunicação por escrito.'
+      descricao: 'Estabilidade de 12 meses anteriores à aposentadoria para empregados com mínimo 5 anos na empresa. Comunicação por escrito obrigatória.'
     },
     {
       id: 'ba-17',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Estabilidade para o Pai',
-      descricao: 'Cláusula específica não consta na convenção analisada.'
+      sessao: 'Taxa Fortalecimento SINDADOS-BA',
+      descricao: '1% do salário base de empregados não associados (uma única vez por CCT). Direito de oposição mediante comparecimento pessoal ou AR.'
     },
     {
       id: 'ba-18',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Contribuição Assistencial Empregados',
-      descricao: '1% do salário base de não associados (uma única vez por CCT). Direito de oposição mediante comparecimento pessoal ou AR.'
+      sessao: 'Taxa Assistencial SINEPD',
+      descricao: 'Equivalente a 1 salário mínimo no mês subsequente à assinatura. Direito de oposição para empresas não filiadas.'
     },
     {
       id: 'ba-19',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Contribuição Assistencial Patronal',
-      descricao: 'Equivalente a 1 salário mínimo ao SINDPD no mês subsequente à assinatura. Direito de oposição para empresas não filiadas.'
+      sessao: 'Acesso e Comunicação aos Dirigentes Sindicais',
+      descricao: 'Até 3 dirigentes sindicais com antecedência de 2 dias úteis. Urnas eleitorais permitidas. Mural para avisos sindicais.'
     },
     {
       id: 'ba-20',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Acesso e Liberação Sindical',
-      descricao: 'Até 3 dirigentes sindicais com antecedência de 2 dias úteis. Urnas eleitorais permitidas. Mural para avisos sindicais.'
+      sessao: 'Pagamento Salarial',
+      descricao: 'Pagamento até 5º dia útil do mês subsequente. Contracheques com discriminação de verbas até 5º dia útil.'
     },
     {
       id: 'ba-21',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Penalidades',
-      descricao: 'Atraso CTPS: 1 dia de salário por dia após 72h. Atraso repasses: correção + juros 1%/mês. Irregularidades: correção em 5 dias.'
+      sessao: 'Adicional de Insalubridade e Periculosidade',
+      descricao: 'Adicional conforme laudo LTCAT para trabalho em condições insalubres, periculosas ou perigosas.'
     },
     {
       id: 'ba-22',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Licenças',
-      descricao: 'Abono social: 1 dia (30h) ou 2 dias (40h) após 12 meses - facultativo. Licença maternidade: 180 dias. Auxílio doença conforme legislação.'
+      sessao: 'Substituição Funcional',
+      descricao: 'Igual salário ao menor da função. Substituição eventual >30 dias: complemento desde 1º dia durante substituição.'
     },
     {
       id: 'ba-23',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Seguro de Vida',
-      descricao: 'Auxílio funeral de 2 salários mínimos em caso de morte do empregado, mediante comprovação das despesas.'
+      sessao: 'Auxílio Funeral',
+      descricao: '2 salários mínimos para despesas funerárias mediante comprovação, se empregado não tiver convênio mais favorável.'
     },
     {
       id: 'ba-24',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Descontos e Repasse ao Sindicato',
-      descricao: 'Mensalidade sindical de associados com depósito em 5 dias. Atraso: correção + juros 1%/mês. Conta: Bradesco Ag 3550-5 CC 1016-2.'
+      sessao: 'Auxílio Creche',
+      descricao: 'Até 30% do piso para filhos até 24 meses; 20% para filhos de 24-60 meses. Facultativo, mediante comprovação fiscal.'
     },
     {
       id: 'ba-25',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Descontos em Folha (autorização expressa)',
-      descricao: 'Mensalidade sindical apenas para empregados associados por escrito. Contribuições mediante autorização individual e expressa.'
+      sessao: 'Transporte Noturno',
+      descricao: 'Transporte entre 22h-05h quando não houver transporte público regular. Não constitui prestação in natura nem horas in itinere.'
     },
     {
       id: 'ba-26',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Quebra de Caixa',
-      descricao: 'Cláusula específica não consta na convenção analisada.'
+      sessao: 'Aviso Prévio',
+      descricao: 'Empregado dispensado pode optar por redução de 2h diárias ou últimos 7 dias do mês do aviso prévio.'
     },
     {
       id: 'ba-27',
       estado: 'BA',
       data: '01/05/2023 a 30/04/2025',
-      sessao: 'Complementação do Auxílio Previdenciário',
-      descricao: 'Empréstimo até 1 salário pelos 30 dias seguintes ao 16º dia de licença previdenciária. Restituição em 30 dias após início do benefício.'
+      sessao: 'Estabilidade',
+      descricao: 'Membros da Comissão Sindical desde registro até final do mandato. 12 meses pré-aposentadoria para empregados com 5+ anos.'
+    },
+    {
+      id: 'ba-28',
+      estado: 'BA',
+      data: '01/05/2023 a 30/04/2025',
+      sessao: 'Ergonomia',
+      descricao: 'Recomendação de implantação da NR 17 (Norma Regulamentadora 17) do Ministério do Trabalho.'
+    },
+    {
+      id: 'ba-29',
+      estado: 'BA',
+      data: '01/05/2023 a 30/04/2025',
+      sessao: 'Abono Social',
+      descricao: 'Facultativo: 1 dia (30h semanais) ou 2 dias (40h semanais) após 12 meses. Indenizado se não usufruído na dispensa.'
+    },
+    {
+      id: 'ba-30',
+      estado: 'BA',
+      data: '01/05/2023 a 30/04/2025',
+      sessao: 'Encargos Sociais',
+      descricao: 'Percentual mínimo de 59,27% sobre remuneração para licitações públicas, garantindo provisionamento de verbas trabalhistas.'
     }
   ],
   'Santa Catarina': [
