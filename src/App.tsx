@@ -23,10 +23,9 @@ function App() {
   
   const { data: conventionsData, loading, error, lastUpdated } = useSharedData();
 
-  const handleSearchChange = (term: string) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
-      const safeTerm = typeof term === 'string' ? term : '';
-      setSearchTerm(safeTerm);
+      setSearchTerm(e.target.value || '');
     } catch (error) {
       console.error('Erro ao definir termo de busca:', error);
       setSearchTerm('');

@@ -3,20 +3,10 @@ import { Search } from 'lucide-react';
 
 interface SearchBarProps {
   searchTerm: string;
-  onSearchChange: (term: string) => void;
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    try {
-      const value = e.target.value || '';
-      onSearchChange(value);
-    } catch (error) {
-      console.error('Erro ao alterar busca:', error);
-      onSearchChange('');
-    }
-  };
-
   return (
     <div className="relative max-w-md mx-auto mb-6">
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -25,7 +15,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange
       <input
         type="text"
         value={searchTerm || ''}
-        onChange={handleChange}
+        onChange={onSearchChange}
         className="block w-full pl-10 pr-3 py-2 border border-gray-600 rounded-md leading-5 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         placeholder="Buscar sessões..."
       />
