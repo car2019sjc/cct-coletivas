@@ -18,19 +18,46 @@ function App() {
   const [activeState, setActiveState] = useState('São Paulo');
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [selectedSession, setSelectedSession] = useState<Session | null>(null);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const [zoomLevel, setZoomLevel] = useState(100);
   
   const { data: conventionsData, loading, error, lastUpdated } = useSharedData();
 
+  const handleSearchChange = (term: string) => {
+    try {
+      const safeTerm = typeof term === 'string' ? term : '';
+      setSearchTerm(safeTerm);
+    } catch (error) {
+      console.error('Erro ao definir termo de busca:', error);
+      setSearchTerm('');
+    }
+  };
+
   const filteredSessions = useMemo(() => {
-    const sessions = conventionsData[activeState] || [];
-    if (!searchTerm) return sessions;
-    
-    return sessions.filter(session =>
-      session.sessao.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      session.descricao.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    try {
+      const sessions = conventionsData[activeState] || [];
+      
+      // Se não há termo de busca, retorna todas as sessões
+      if (!searchTerm || searchTerm.trim() === '') {
+        return sessions;
+      }
+      
+      // Filtra as sessões com validação adicional
+      return sessions.filter(session => {
+        if (!session || !session.sessao || !session.descricao) {
+          return false;
+        }
+        
+        const searchLower = searchTerm.toLowerCase().trim();
+        const sessaoLower = session.sessao.toLowerCase();
+        const descricaoLower = session.descricao.toLowerCase();
+        
+        return sessaoLower.includes(searchLower) || descricaoLower.includes(searchLower);
+      });
+    } catch (error) {
+      console.error('Erro na filtragem de sessões:', error);
+      return conventionsData[activeState] || [];
+    }
   }, [conventionsData, activeState, searchTerm]);
 
   const handleSessionClick = (session: Session) => {
@@ -175,7 +202,7 @@ function App() {
             ))}
           </div>
 
-          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+          <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
 
           <div 
             style={{ 
