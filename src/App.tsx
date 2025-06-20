@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { MapPin, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 import { Header } from './components/Header';
 import { StateTab } from './components/StateTab';
@@ -60,10 +60,10 @@ function App() {
     }
   }, [conventionsData, activeState, searchTerm]);
 
-  const handleSessionClick = (session: Session) => {
+  const handleSessionClick = useCallback((session: Session) => {
     setSelectedSession(session);
     setIsDetailModalOpen(true);
-  };
+  }, []);
 
   const handleCloseDetailModal = () => {
     setIsDetailModalOpen(false);
@@ -217,9 +217,9 @@ function App() {
           >
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 w-full">
               {filteredSessions.length > 0 ? (
-                filteredSessions.map((session) => (
+                filteredSessions.map((session, index) => (
                   <SessionCard 
-                    key={session.id} 
+                    key={`${session.id}-${index}`} 
                     session={session} 
                     onClick={() => handleSessionClick(session)}
                   />
