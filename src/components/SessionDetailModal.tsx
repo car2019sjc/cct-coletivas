@@ -17,7 +17,17 @@ export const SessionDetailModal: React.FC<SessionDetailModalProps> = ({
 
   const formatDate = (dateString: string) => {
     try {
+      // Verifica se é um período de vigência (contém 'a' entre datas)
+      if (dateString.includes(' a ')) {
+        return dateString; // Retorna o período formatado como está
+      }
+      
+      // Tenta formatar como data simples
       const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        return dateString; // Se não for uma data válida, retorna o valor original
+      }
+      
       return date.toLocaleDateString('pt-BR', {
         weekday: 'long',
         year: 'numeric',
@@ -25,7 +35,7 @@ export const SessionDetailModal: React.FC<SessionDetailModalProps> = ({
         day: 'numeric'
       });
     } catch {
-      return dateString;
+      return dateString; // Em caso de erro, retorna o valor original
     }
   };
 
@@ -77,7 +87,9 @@ export const SessionDetailModal: React.FC<SessionDetailModalProps> = ({
             <div className="bg-blue-900/20 p-4 rounded-lg">
               <div className="flex items-center space-x-2 text-blue-300 mb-2">
                 <Calendar className="h-4 w-4" />
-                <span className="font-medium text-sm">Data</span>
+                <span className="font-medium text-sm">
+                  {session.data.includes(' a ') ? 'Período de Vigência' : 'Data'}
+                </span>
               </div>
               <p className="text-white font-semibold">
                 {formatDate(session.data)}

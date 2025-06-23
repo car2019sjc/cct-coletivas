@@ -1,0 +1,579 @@
+{
+  "lastUpdated": "2025-01-27T10:00:00.000Z",
+  "version": "1.0.0",
+  "data": {
+    "São Paulo": [
+      {
+        "id": "sp-1",
+        "estado": "São Paulo",
+        "data": "2024-01-15",
+        "sessao": "Vigência e Data-Base",
+        "descricao": "Período de vigência da convenção coletiva de trabalho e data-base para reajustes salariais"
+      },
+      {
+        "id": "sp-2",
+        "estado": "São Paulo",
+        "data": "2024-01-20",
+        "sessao": "Pisos Salariais",
+        "descricao": "R$ 2.200,00 - Reajuste salarial base para todas as categorias profissionais do estado"
+      },
+      {
+        "id": "sp-3",
+        "estado": "São Paulo",
+        "data": "2024-01-25",
+        "sessao": "Reajuste Salarial",
+        "descricao": "Percentual de reajuste aplicado sobre os salários vigentes conforme data-base da categoria"
+      },
+      {
+        "id": "sp-4",
+        "estado": "São Paulo",
+        "data": "2024-02-01",
+        "sessao": "Jornada de Trabalho",
+        "descricao": "Definição da jornada padrão de trabalho e regras para compensação de horários"
+      },
+      {
+        "id": "sp-5",
+        "estado": "São Paulo",
+        "data": "2024-02-05",
+        "sessao": "Vale Refeição/Alimentação",
+        "descricao": "R$ 36,00 - Valor mínimo diário para auxílio alimentação dos trabalhadores"
+      },
+      {
+        "id": "sp-6",
+        "estado": "São Paulo",
+        "data": "2024-02-10",
+        "sessao": "Vale Transporte",
+        "descricao": "Fornecimento gratuito sem desconto em folha para locomoção residência-trabalho-residência"
+      },
+      {
+        "id": "sp-7",
+        "estado": "São Paulo",
+        "data": "2024-02-15",
+        "sessao": "Adicional Noturno",
+        "descricao": "Período das 22h às 05h - Adicional de 20% sobre o valor da hora normal trabalhada"
+      },
+      {
+        "id": "sp-8",
+        "estado": "São Paulo",
+        "data": "2024-02-20",
+        "sessao": "Horas Extras",
+        "descricao": "Adicional de 50% nas duas primeiras horas extras e 100% nas horas subsequentes"
+      },
+      {
+        "id": "sp-9",
+        "estado": "São Paulo",
+        "data": "2024-02-25",
+        "sessao": "Banco de Horas",
+        "descricao": "Compensação de horas extras mediante acordo, prazo máximo de 6 meses para quitação do saldo"
+      },
+      {
+        "id": "sp-10",
+        "estado": "São Paulo",
+        "data": "2024-03-01",
+        "sessao": "Assistência Médica",
+        "descricao": "Cobertura médica com carência mínima conforme regulamentação da categoria"
+      },
+      {
+        "id": "sp-11",
+        "estado": "São Paulo",
+        "data": "2024-03-05",
+        "sessao": "Licença-Maternidade",
+        "descricao": "120 dias conforme CLT, recomendado 180 dias através do Programa Empresa Cidadã"
+      },
+      {
+        "id": "sp-12",
+        "estado": "São Paulo",
+        "data": "2024-03-10",
+        "sessao": "Faltas Justificadas",
+        "descricao": "Até 12 faltas anuais para consulta médica de pais com mais de 60 anos, mediante comprovante"
+      },
+      {
+        "id": "sp-13",
+        "estado": "São Paulo",
+        "data": "2024-03-15",
+        "sessao": "Atestado Médico",
+        "descricao": "Aceitação de atestados médicos conforme legislação vigente e normas da categoria"
+      },
+      {
+        "id": "sp-14",
+        "estado": "São Paulo",
+        "data": "2024-03-20",
+        "sessao": "Complementação do Auxílio-Doença",
+        "descricao": "Complementação de até 100% do salário líquido durante afastamento previdenciário"
+      },
+      {
+        "id": "sp-15",
+        "estado": "São Paulo",
+        "data": "2024-03-25",
+        "sessao": "Participação nos Lucros ou Resultados (PLR)",
+        "descricao": "Negociação com sindicato ou comissão de empregados conforme legislação específica"
+      },
+      {
+        "id": "sp-16",
+        "estado": "São Paulo",
+        "data": "2024-04-01",
+        "sessao": "Garantia Pré-Aposentadoria",
+        "descricao": "Estabilidade no emprego por no mínimo 2 anos antes da aposentadoria compulsória"
+      },
+      {
+        "id": "sp-17",
+        "estado": "São Paulo",
+        "data": "2024-04-05",
+        "sessao": "Estabilidade para o Pai",
+        "descricao": "30 dias após nascimento ou adoção do filho, mediante comunicação prévia"
+      },
+      {
+        "id": "sp-18",
+        "estado": "São Paulo",
+        "data": "2024-04-10",
+        "sessao": "Contribuição Assistencial Empregados",
+        "descricao": "Valor definido em assembleia, descontado conforme deliberação sindical"
+      },
+      {
+        "id": "sp-19",
+        "estado": "São Paulo",
+        "data": "2024-04-15",
+        "sessao": "Contribuição Assistencial Patronal",
+        "descricao": "Valor definido em assembleia sindical, calculado conforme número de empregados"
+      },
+      {
+        "id": "sp-20",
+        "estado": "São Paulo",
+        "data": "2024-04-20",
+        "sessao": "Acesso e Liberação Sindical",
+        "descricao": "Permitido mediante acordo de horário e comunicação prévia à empresa"
+      },
+      {
+        "id": "sp-21",
+        "estado": "São Paulo",
+        "data": "2024-04-25",
+        "sessao": "Penalidades",
+        "descricao": "Multa de 10% do menor piso por empregado à infração, revertida à parte prejudicada"
+      },
+      {
+        "id": "sp-22",
+        "estado": "São Paulo",
+        "data": "2024-05-01",
+        "sessao": "Licenças",
+        "descricao": "Concessão de licenças especiais conforme necessidade e acordo entre as partes"
+      },
+      {
+        "id": "sp-23",
+        "estado": "São Paulo",
+        "data": "2024-05-05",
+        "sessao": "Seguro de Vida",
+        "descricao": "Cobertura mínima de seguro de vida em grupo conforme valor estabelecido"
+      },
+      {
+        "id": "sp-24",
+        "estado": "São Paulo",
+        "data": "2024-05-10",
+        "sessao": "Descontos e Repasse ao Sindicato",
+        "descricao": "Código GRCSIJ para recolhimento das contribuições sindicais patronais e dos empregados"
+      },
+      {
+        "id": "sp-25",
+        "estado": "São Paulo",
+        "data": "2024-05-15",
+        "sessao": "Descontos em Folha (autorização expressa)",
+        "descricao": "Auxílio educacional mediante autorização expressa do empregado para desconto em folha"
+      },
+      {
+        "id": "sp-26",
+        "estado": "São Paulo",
+        "data": "2024-05-20",
+        "sessao": "Quebra de Caixa",
+        "descricao": "20% sobre o menor piso salarial para funcionários que operam caixa registradora"
+      },
+      {
+        "id": "sp-27",
+        "estado": "São Paulo",
+        "data": "2024-05-25",
+        "sessao": "Complementação do Auxílio Previdenciário",
+        "descricao": "Até 100% do salário líquido durante afastamento por auxílio-doença previdenciário"
+      }
+    ],
+    "Bahia": [
+      {
+        "id": "ba-1",
+        "estado": "Bahia",
+        "data": "2024-01-18",
+        "sessao": "Vigência e Data-Base",
+        "descricao": "Período de vigência da convenção coletiva: 01/04/2024 a 31/03/2025"
+      },
+      {
+        "id": "ba-2",
+        "estado": "Bahia",
+        "data": "2024-01-22",
+        "sessao": "Pisos Salariais",
+        "descricao": "Valores mínimos salariais estabelecidos para cada categoria profissional"
+      },
+      {
+        "id": "ba-3",
+        "estado": "Bahia",
+        "data": "2024-01-25",
+        "sessao": "Reajuste Salarial",
+        "descricao": "Percentual de reajuste aplicado sobre os salários vigentes em dezembro/2023"
+      },
+      {
+        "id": "ba-4",
+        "estado": "Bahia",
+        "data": "2024-01-28",
+        "sessao": "Jornada de Trabalho",
+        "descricao": "Jornada padrão de trabalho e regras para compensação de horários"
+      },
+      {
+        "id": "ba-5",
+        "estado": "Bahia",
+        "data": "2024-02-01",
+        "sessao": "Vale Refeição/Alimentação",
+        "descricao": "Valor mínimo diário para auxílio alimentação dos trabalhadores"
+      },
+      {
+        "id": "ba-6",
+        "estado": "Bahia",
+        "data": "2024-02-05",
+        "sessao": "Vale Transporte",
+        "descricao": "Fornecimento de vale transporte conforme legislação trabalhista"
+      },
+      {
+        "id": "ba-7",
+        "estado": "Bahia",
+        "data": "2024-02-08",
+        "sessao": "Adicional Noturno",
+        "descricao": "Adicional sobre o valor da hora normal para trabalho noturno"
+      },
+      {
+        "id": "ba-8",
+        "estado": "Bahia",
+        "data": "2024-02-12",
+        "sessao": "Horas Extras",
+        "descricao": "Adicional sobre as horas trabalhadas além da jornada normal"
+      },
+      {
+        "id": "ba-9",
+        "estado": "Bahia",
+        "data": "2024-02-15",
+        "sessao": "Banco de Horas",
+        "descricao": "Sistema de compensação de horas extras trabalhadas"
+      },
+      {
+        "id": "ba-10",
+        "estado": "Bahia",
+        "data": "2024-02-18",
+        "sessao": "Assistência Médica",
+        "descricao": "Cobertura médica com carência mínima para procedimentos eletivos"
+      },
+      {
+        "id": "ba-11",
+        "estado": "Bahia",
+        "data": "2024-02-22",
+        "sessao": "Licença-Maternidade",
+        "descricao": "Licença maternidade conforme CLT e programas de extensão"
+      },
+      {
+        "id": "ba-12",
+        "estado": "Bahia",
+        "data": "2024-02-25",
+        "sessao": "Faltas Justificadas",
+        "descricao": "Faltas permitidas para consultas médicas e outros motivos justificados"
+      },
+      {
+        "id": "ba-13",
+        "estado": "Bahia",
+        "data": "2024-02-28",
+        "sessao": "Atestado Médico",
+        "descricao": "Normas para aceitação de atestados médicos"
+      },
+      {
+        "id": "ba-14",
+        "estado": "Bahia",
+        "data": "2024-03-05",
+        "sessao": "Complementação do Auxílio-Doença",
+        "descricao": "Complementação salarial durante afastamento por auxílio-doença"
+      },
+      {
+        "id": "ba-15",
+        "estado": "Bahia",
+        "data": "2024-03-08",
+        "sessao": "Participação nos Lucros ou Resultados (PLR)",
+        "descricao": "Negociação de PLR conforme legislação específica"
+      },
+      {
+        "id": "ba-16",
+        "estado": "Bahia",
+        "data": "2024-03-12",
+        "sessao": "Garantia Pré-Aposentadoria",
+        "descricao": "Estabilidade no emprego por no mínimo 2 anos antes da aposentadoria compulsória"
+      },
+      {
+        "id": "ba-17",
+        "estado": "Bahia",
+        "data": "2024-03-15",
+        "sessao": "Estabilidade para o Pai",
+        "descricao": "Estabilidade após nascimento ou adoção de filho"
+      },
+      {
+        "id": "ba-18",
+        "estado": "Bahia",
+        "data": "2024-03-18",
+        "sessao": "Contribuição Assistencial Empregados",
+        "descricao": "R$ 35,00 para 2024, descontado conforme deliberação em assembleia sindical"
+      },
+      {
+        "id": "ba-19",
+        "estado": "Bahia",
+        "data": "2024-03-22",
+        "sessao": "Contribuição Assistencial Patronal",
+        "descricao": "Valor definido em assembleia sindical, conforme número de empregados da empresa"
+      },
+      {
+        "id": "ba-20",
+        "estado": "Bahia",
+        "data": "2024-03-25",
+        "sessao": "Acesso e Liberação Sindical",
+        "descricao": "Permitido mediante acordo de horário entre sindicato e empresa"
+      },
+      {
+        "id": "ba-21",
+        "estado": "Bahia",
+        "data": "2024-03-28",
+        "sessao": "Penalidades",
+        "descricao": "Multas por descumprimento das cláusulas da convenção coletiva"
+      },
+      {
+        "id": "ba-22",
+        "estado": "Bahia",
+        "data": "2024-04-01",
+        "sessao": "Licenças",
+        "descricao": "Concessão de licenças especiais para assuntos particulares"
+      },
+      {
+        "id": "ba-23",
+        "estado": "Bahia",
+        "data": "2024-04-05",
+        "sessao": "Seguro de Vida",
+        "descricao": "Cobertura mínima de seguro de vida em grupo"
+      },
+      {
+        "id": "ba-24",
+        "estado": "Bahia",
+        "data": "2024-04-08",
+        "sessao": "Descontos e Repasse ao Sindicato",
+        "descricao": "Código para recolhimento das contribuições sindicais"
+      },
+      {
+        "id": "ba-25",
+        "estado": "Bahia",
+        "data": "2024-04-12",
+        "sessao": "Descontos em Folha (autorização expressa)",
+        "descricao": "Descontos mediante autorização expressa do empregado"
+      },
+      {
+        "id": "ba-26",
+        "estado": "Bahia",
+        "data": "2024-04-15",
+        "sessao": "Quebra de Caixa",
+        "descricao": "20% sobre o menor piso para funcionários que operam caixa"
+      },
+      {
+        "id": "ba-27",
+        "estado": "Bahia",
+        "data": "2024-04-18",
+        "sessao": "Complementação do Auxílio Previdenciário",
+        "descricao": "Até 100% do salário líquido durante afastamento previdenciário"
+      }
+    ],
+    "Santa Catarina": [
+      {
+        "id": "sc-1",
+        "estado": "Santa Catarina",
+        "data": "2024-01-12",
+        "sessao": "Vigência e Data-Base",
+        "descricao": "Período de vigência da convenção coletiva e data-base para reajustes"
+      },
+      {
+        "id": "sc-2",
+        "estado": "Santa Catarina",
+        "data": "2024-01-15",
+        "sessao": "Pisos Salariais",
+        "descricao": "Valores mínimos salariais estabelecidos para cada função"
+      },
+      {
+        "id": "sc-3",
+        "estado": "Santa Catarina",
+        "data": "2024-01-18",
+        "sessao": "Reajuste Salarial",
+        "descricao": "Reajuste aplicado sobre salários vigentes em dezembro/2023, conforme data base da categoria"
+      },
+      {
+        "id": "sc-4",
+        "estado": "Santa Catarina",
+        "data": "2024-01-22",
+        "sessao": "Jornada de Trabalho",
+        "descricao": "Jornada padrão de 30 horas semanais para a categoria profissional"
+      },
+      {
+        "id": "sc-5",
+        "estado": "Santa Catarina",
+        "data": "2024-01-25",
+        "sessao": "Vale Refeição/Alimentação",
+        "descricao": "Valor mínimo diário para auxílio alimentação"
+      },
+      {
+        "id": "sc-6",
+        "estado": "Santa Catarina",
+        "data": "2024-01-28",
+        "sessao": "Vale Transporte",
+        "descricao": "Fornecimento de vale transporte para locomoção"
+      },
+      {
+        "id": "sc-7",
+        "estado": "Santa Catarina",
+        "data": "2024-02-01",
+        "sessao": "Adicional Noturno",
+        "descricao": "Adicional para trabalho realizado no período noturno"
+      },
+      {
+        "id": "sc-8",
+        "estado": "Santa Catarina",
+        "data": "2024-02-05",
+        "sessao": "Horas Extras",
+        "descricao": "Adicional de 75% nas duas primeiras horas extras, 100% nas horas subsequentes"
+      },
+      {
+        "id": "sc-9",
+        "estado": "Santa Catarina",
+        "data": "2024-02-08",
+        "sessao": "Banco de Horas",
+        "descricao": "Sistema de compensação de horas extras mediante acordo"
+      },
+      {
+        "id": "sc-10",
+        "estado": "Santa Catarina",
+        "data": "2024-02-12",
+        "sessao": "Assistência Médica",
+        "descricao": "Cobertura médica com carência mínima de 5 meses para procedimentos eletivos"
+      },
+      {
+        "id": "sc-11",
+        "estado": "Santa Catarina",
+        "data": "2024-02-15",
+        "sessao": "Licença-Maternidade",
+        "descricao": "120 dias conforme CLT, recomendado 180 dias através do Programa Empresa Cidadã"
+      },
+      {
+        "id": "sc-12",
+        "estado": "Santa Catarina",
+        "data": "2024-02-18",
+        "sessao": "Faltas Justificadas",
+        "descricao": "Faltas permitidas para consultas médicas e outros motivos"
+      },
+      {
+        "id": "sc-13",
+        "estado": "Santa Catarina",
+        "data": "2024-02-22",
+        "sessao": "Atestado Médico",
+        "descricao": "Normas para apresentação e aceitação de atestados médicos"
+      },
+      {
+        "id": "sc-14",
+        "estado": "Santa Catarina",
+        "data": "2024-02-25",
+        "sessao": "Complementação do Auxílio-Doença",
+        "descricao": "Complementação salarial durante afastamento por doença"
+      },
+      {
+        "id": "sc-15",
+        "estado": "Santa Catarina",
+        "data": "2024-02-28",
+        "sessao": "Participação nos Lucros ou Resultados (PLR)",
+        "descricao": "Distribuição de resultados conforme negociação específica"
+      },
+      {
+        "id": "sc-16",
+        "estado": "Santa Catarina",
+        "data": "2024-03-05",
+        "sessao": "Garantia Pré-Aposentadoria",
+        "descricao": "Estabilidade no emprego antes da aposentadoria"
+      },
+      {
+        "id": "sc-17",
+        "estado": "Santa Catarina",
+        "data": "2024-03-08",
+        "sessao": "Estabilidade para o Pai",
+        "descricao": "Estabilidade após nascimento ou adoção de filho"
+      },
+      {
+        "id": "sc-18",
+        "estado": "Santa Catarina",
+        "data": "2024-03-12",
+        "sessao": "Contribuição Assistencial Empregados",
+        "descricao": "Contribuição sindical dos empregados conforme assembleia"
+      },
+      {
+        "id": "sc-19",
+        "estado": "Santa Catarina",
+        "data": "2024-03-15",
+        "sessao": "Contribuição Assistencial Patronal",
+        "descricao": "Contribuição sindical patronal calculada por número de empregados"
+      },
+      {
+        "id": "sc-20",
+        "estado": "Santa Catarina",
+        "data": "2024-03-18",
+        "sessao": "Acesso e Liberação Sindical",
+        "descricao": "Liberação para atividades sindicais mediante acordo"
+      },
+      {
+        "id": "sc-21",
+        "estado": "Santa Catarina",
+        "data": "2024-03-22",
+        "sessao": "Penalidades",
+        "descricao": "Multas por descumprimento das normas convencionais"
+      },
+      {
+        "id": "sc-22",
+        "estado": "Santa Catarina",
+        "data": "2024-03-25",
+        "sessao": "Licenças",
+        "descricao": "Concessão de 5 dias úteis anuais para licença para assuntos particulares"
+      },
+      {
+        "id": "sc-23",
+        "estado": "Santa Catarina",
+        "data": "2024-03-28",
+        "sessao": "Seguro de Vida",
+        "descricao": "Cobertura mínima de seguro de vida em grupo de 5 vezes o salário mensal"
+      },
+      {
+        "id": "sc-24",
+        "estado": "Santa Catarina",
+        "data": "2024-04-01",
+        "sessao": "Descontos e Repasse ao Sindicato",
+        "descricao": "Código GRCSIJ para recolhimento das contribuições sindicais patronais e dos empregados"
+      },
+      {
+        "id": "sc-25",
+        "estado": "Santa Catarina",
+        "data": "2024-04-05",
+        "sessao": "Descontos em Folha (autorização expressa)",
+        "descricao": "Benefício educacional mediante autorização expressa do empregado para desconto em folha"
+      },
+      {
+        "id": "sc-26",
+        "estado": "Santa Catarina",
+        "data": "2024-04-08",
+        "sessao": "Quebra de Caixa",
+        "descricao": "Adicional para funcionários que operam caixa registradora"
+      },
+      {
+        "id": "sc-27",
+        "estado": "Santa Catarina",
+        "data": "2024-04-12",
+        "sessao": "Complementação do Auxílio Previdenciário",
+        "descricao": "Complementação durante afastamento previdenciário"
+      }
+    ]
+  }
+}
