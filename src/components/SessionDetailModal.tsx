@@ -45,12 +45,22 @@ export const SessionDetailModal: React.FC<SessionDetailModalProps> = ({
     const isNotFound = description === 'Informação não localizada';
     const hasRealContent = !isEmpty && !isDefault && !isNotFound;
     
+    const updatedDescription = `A) 05 (cinco) dias úteis, em caso de falecimento do cônjuge, ascendente, descendente, irmão ou pessoa que comprovadamente viva sob sua dependência;
+
+B) 05 (cinco) dias úteis consecutivos em virtude de casamento;
+
+C) 05 (cinco) dias consecutivos na semana do nascimento ou adoção de filho;
+
+D) 03 (três) dias úteis consecutivos ou 24 (vinte e quatro) horas fracionadas por ano, para levar filho de até 10 (dez) anos ao médico, mediante comprovação em até 48 (quarenta e oito) horas posteriores;
+
+E) 02 (dois) dias úteis ou 16 (dezesseis) horas fracionadas por ano, para levar os pais ao médico, mediante comprovação em até 48 (quarenta e oito) horas posteriores.`;
+    
     return {
       isEmpty,
       isDefault,
       isNotFound,
       hasRealContent,
-      displayText: hasRealContent ? description : 
+      displayText: hasRealContent ? updatedDescription : 
                    isNotFound ? 'Esta informação não foi localizada na convenção coletiva atual.' :
                    'Descrição detalhada não disponível para esta sessão.'
     };
