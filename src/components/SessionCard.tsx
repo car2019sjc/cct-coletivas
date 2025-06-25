@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Session } from '../types';
 
@@ -8,6 +8,20 @@ interface SessionCardProps {
 }
 
 export const SessionCard: React.FC<SessionCardProps> = ({ session, onClick }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Pequeno delay para garantir que o DOM está estável
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 10);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   const getDescriptionInfo = (description: string) => {
     const isEmpty = !description || description.trim() === '';
     const isDefault = description === 'Descrição não informada';
@@ -27,12 +41,38 @@ export const SessionCard: React.FC<SessionCardProps> = ({ session, onClick }) =>
     return { badgeColor, hasRealContent };
   };
 
+  const handleClick = () => {
+    try {
+      if (cardRef.current && isReady) {
+        onClick();
+      }
+    } catch (error) {
+      console.error('Erro ao clicar no card:', error);
+    }
+  };
+
+  if (!session || !session.id || !isReady) {
+    return (
+      <div className="group bg-gray-800 rounded-xl border border-gray-700 opacity-50 animate-pulse">
+        <div className="bg-gradient-to-r from-gray-700 to-gray-750 px-4 py-3 border-b border-gray-600">
+          <div className="h-4 bg-gray-600 rounded"></div>
+        </div>
+        <div className="p-6">
+          <div className="mb-6">
+            <div className="h-6 bg-gray-600 rounded"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const descInfo = getDescriptionInfo(session.descricao);
 
   return (
     <div 
+      ref={cardRef}
       className="group bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer overflow-hidden"
-      onClick={onClick}
+      onClick={handleClick}
     >
       {/* Header com estado */}
       <div className="bg-gradient-to-r from-gray-700 to-gray-750 px-4 py-3 border-b border-gray-600">

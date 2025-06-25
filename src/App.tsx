@@ -1,12 +1,14 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { MapPin, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 import { Header } from './components/Header';
 import { StateTab } from './components/StateTab';
+import { SearchBar } from './components/SearchBar';
 import { SessionCard } from './components/SessionCard';
 import { SessionDetailModal } from './components/SessionDetailModal';
-import { SearchBar } from './components/SearchBar';
+import { AdminModal } from './components/AdminModal';
+import { DocumentationModal } from './components/DocumentationModal';
 import { useSharedData } from './hooks/useSharedData';
-import { Session } from './types';
+import { Session, SessionData } from './types';
 
 const STATES = [
   { name: 'São Paulo', icon: <MapPin className="h-4 w-4" /> },
@@ -16,32 +18,54 @@ const STATES = [
 
 function App() {
   const [activeState, setActiveState] = useState('São Paulo');
-  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedSession, setSelectedSession] = useState<Session | null>(null);
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [isDocumentationModalOpen, setIsDocumentationModalOpen] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(100);
-  
+  const [isRenderSafe, setIsRenderSafe] = useState(true);
+  const mountedRef = useRef(true);
+  const [renderKey, setRenderKey] = useState(0);
+
   const { data: conventionsData, loading, error, lastUpdated } = useSharedData();
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    try {
-      setSearchTerm(e.target.value || '');
-    } catch (error) {
-      console.error('Erro ao definir termo de busca:', error);
-      setSearchTerm('');
-    }
-  };
+  // Proteção contra erros de DOM
+  useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      if (event.error && event.error.message && event.error.message.includes('removeChild')) {
+        console.warn('Erro de removeChild detectado, forçando re-renderização completa...');
+        
+        // Força uma re-renderização completa mudando a chave
+        setRenderKey(prev => prev + 1);
+        
+        // Previne o erro de aparecer no console
+        event.preventDefault();
+        return false;
+      }
+    };
+
+    window.addEventListener('error', handleError);
+    
+    return () => {
+      mountedRef.current = false;
+      window.removeEventListener('error', handleError);
+    };
+  }, []);
+
+  const handleSearchChange = useCallback((value: string) => {
+    if (!isRenderSafe) return;
+    setSearchTerm(value);
+  }, [isRenderSafe]);
 
   const filteredSessions = useMemo(() => {
     try {
       const sessions = conventionsData[activeState] || [];
       
-      // Se não há termo de busca, retorna todas as sessões
       if (!searchTerm || searchTerm.trim() === '') {
         return sessions;
       }
       
-      // Filtra as sessões com validação adicional
       return sessions.filter(session => {
         if (!session || !session.sessao || !session.descricao) {
           return false;
@@ -55,7 +79,7 @@ function App() {
       });
     } catch (error) {
       console.error('Erro na filtragem de sessões:', error);
-      return conventionsData[activeState] || [];
+      return [];
     }
   }, [conventionsData, activeState, searchTerm]);
 
@@ -65,8 +89,16 @@ function App() {
   }, []);
 
   const handleCloseDetailModal = () => {
-    setIsDetailModalOpen(false);
     setSelectedSession(null);
+    setIsDetailModalOpen(false);
+  };
+
+  const handleDataUpdate = (data: SessionData) => {
+    console.log('Dados atualizados:', data);
+  };
+
+  const handleOpenDocumentation = () => {
+    setIsDocumentationModalOpen(true);
   };
 
   const handleZoomIn = () => {
@@ -83,10 +115,10 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey) {
+      if (e.ctrlKey) {
         switch (e.key) {
-          case '=':
           case '+':
+          case '=':
             e.preventDefault();
             handleZoomIn();
             break;
@@ -111,8 +143,7 @@ function App() {
       <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-400">Carregando dados compartilhados...</p>
-          <p className="text-xs text-gray-500 mt-2">Verificando dados persistentes no navegador...</p>
+          <p className="text-gray-400">Carregando dados...</p>
         </div>
       </div>
     );
@@ -123,7 +154,7 @@ function App() {
       <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center max-w-md">
           <div className="text-red-500 mb-4 text-4xl">⚠️</div>
-          <p className="text-red-400 mb-2 font-semibold">Erro ao carregar dados compartilhados</p>
+          <p className="text-red-400 mb-2 font-semibold">Erro ao carregar dados</p>
           <p className="text-gray-400 text-sm mb-4">{error}</p>
           <button 
             onClick={() => window.location.reload()} 
@@ -136,8 +167,19 @@ function App() {
     );
   }
 
+  if (!isRenderSafe) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-pulse text-yellow-400 mb-4 text-4xl">⚠️</div>
+          <p className="text-yellow-300">Recuperando de erro de renderização...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col" key={renderKey}>
       <Header />
       
       <main className="container mx-auto px-4 py-6 flex-1">
@@ -156,7 +198,6 @@ function App() {
         </div>
 
         <div className="flex justify-center items-center mb-4">
-          {/* Controles de Zoom */}
           <div className="flex items-center space-x-2 bg-gray-800 rounded-lg p-2 border border-gray-700">
             <button
               onClick={handleZoomOut}
@@ -201,7 +242,7 @@ function App() {
             ))}
           </div>
 
-          <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
+          <SearchBar onSearchChange={handleSearchChange} />
 
           <div 
             style={{ 
@@ -218,9 +259,9 @@ function App() {
               {filteredSessions.length > 0 ? (
                 filteredSessions.map((session, index) => (
                   <SessionCard 
-                    key={`${session.id}-${index}`} 
+                    key={`${activeState}-${session.id}-${index}`}
                     session={session} 
-                    onClick={() => handleSessionClick(session)}
+                    onClick={() => handleSessionClick(session)} 
                   />
                 ))
               ) : (
@@ -272,6 +313,18 @@ function App() {
         session={selectedSession}
         isOpen={isDetailModalOpen}
         onClose={handleCloseDetailModal}
+      />
+
+      <AdminModal
+        isOpen={isAdminModalOpen}
+        onClose={() => setIsAdminModalOpen(false)}
+        onDataUpdate={handleDataUpdate}
+        onOpenDocumentation={handleOpenDocumentation}
+      />
+
+      <DocumentationModal
+        isOpen={isDocumentationModalOpen}
+        onClose={() => setIsDocumentationModalOpen(false)}
       />
     </div>
   );

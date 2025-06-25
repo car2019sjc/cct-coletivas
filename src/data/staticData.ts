@@ -280,7 +280,7 @@ export const staticConventionsData: SessionData = {
       estado: 'SP',
       data: '01/01/2024 a 31/12/2025',
       sessao: 'Ausências Legais',
-      descricao: 'Ausências legais ampliadas: 5 dias úteis para falecimento de cônjuge, ascendente, descendente, irmão ou pessoa sob dependência; 5 dias consecutivos para casamento; 5 dias consecutivos na semana do nascimento ou adoção de filho; 3 dias úteis consecutivos ou 24 horas fracionadas anuais para levar filho de até 12 anos ao médico.'
+      descricao: 'A) 05 (cinco) dias úteis, em caso de falecimento do cônjuge, ascendente, descendente, irmão ou pessoa que comprovadamente viva sob sua dependência;\nB) 05 (cinco) dias úteis consecutivos em virtude de casamento;\nC) 05 (cinco) dias consecutivos na semana do nascimento ou adoção de filho;\nD) 03 (três) dias úteis consecutivos ou 24 (vinte e quatro) horas fracionadas por ano, para levar filho de até 10 (dez) anos ao médico, mediante comprovação em até 48 (quarenta e oito) horas posteriores;\nE) 02 (dois) dias úteis ou 16 (dezesseis) horas fracionadas por ano, para levar os pais ao médico, mediante comprovação em até 48 (quarenta e oito) horas posteriores.'
     },
     {
       id: 'sp-41',

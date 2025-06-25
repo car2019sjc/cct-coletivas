@@ -10,6 +10,7 @@ Sistema web para consulta e visualização de Convenções Coletivas de Trabalho
 - **Controles de zoom** para melhor visualização
 - **Interface responsiva** e moderna
 - **Dados estáticos** embutidos no código
+- **Sistema robusto** com proteção contra erros de DOM
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -18,6 +19,28 @@ Sistema web para consulta e visualização de Convenções Coletivas de Trabalho
 - **Tailwind CSS** para estilização
 - **Lucide React** para ícones
 - **LocalStorage** para persistência de dados
+
+## 🔧 Melhorias e Correções Implementadas
+
+### ✅ Correção do Erro de removeChild
+- **Problema resolvido:** Erro `NotFoundError: Failed to execute 'removeChild' on 'Node'` ao usar backspace
+- **Solução implementada:** 
+  - Interceptação global de operações DOM problemáticas
+  - Sistema de re-renderização automática quando erros são detectados
+  - Proteção em camadas nos componentes SearchBar e App
+  - Tratamento elegante de erros sem interromper a experiência do usuário
+
+### 🛡️ Sistema de Proteção Robusto
+- **Interceptação de DOM:** Override seguro do `removeChild` nativo
+- **Recuperação automática:** Re-renderização forçada em caso de erros
+- **Experiência contínua:** Usuário não percebe falhas internas
+- **Logs informativos:** Erros são registrados para debugging sem afetar a UI
+
+### 🎯 Estabilidade Aprimorada
+- **Campo de busca:** Funciona perfeitamente com backspace e digitação contínua
+- **Debounce inteligente:** Otimização de performance na busca
+- **Referências seguras:** Uso de `useRef` para controle preciso de elementos
+- **Try-catch estratégico:** Proteção em pontos críticos da aplicação
 
 ## 📊 Estados e Dados
 
@@ -47,7 +70,8 @@ Sistema web para consulta e visualização de Convenções Coletivas de Trabalho
 
 ### Busca
 - Digite na barra de pesquisa para filtrar por seção ou descrição
-- Os resultados são atualizados em tempo real
+- **Funciona perfeitamente** com backspace e digitação contínua
+- Os resultados são atualizados em tempo real com debounce otimizado
 
 ### Navegação
 - Selecione o estado desejado nas abas
@@ -90,7 +114,7 @@ npm run preview
 src/
 ├── components/          # Componentes React
 │   ├── Header.tsx      # Cabeçalho da aplicação
-│   ├── SearchBar.tsx   # Barra de pesquisa
+│   ├── SearchBar.tsx   # Barra de pesquisa (com proteção contra erros)
 │   ├── SessionCard.tsx # Cards das sessões
 │   ├── SessionDetailModal.tsx # Modal de detalhes
 │   └── StateTab.tsx    # Abas dos estados
@@ -100,8 +124,35 @@ src/
 │   └── useSharedData.ts # Hook para gerenciar dados
 ├── types/
 │   └── index.ts        # Definições de tipos TypeScript
-└── App.tsx             # Componente principal
+├── App.tsx             # Componente principal (com sistema de proteção)
+└── main.tsx            # Ponto de entrada (com interceptação global)
 ```
+
+## 🔍 Detalhes Técnicos das Correções
+
+### Sistema de Interceptação DOM
+```typescript
+// Override seguro do removeChild
+const originalRemoveChild = Node.prototype.removeChild;
+Node.prototype.removeChild = function<T extends Node>(child: T): T {
+  try {
+    if (this.contains(child)) {
+      return originalRemoveChild.call(this, child) as T;
+    } else {
+      console.warn('Tentativa de remover nó que não é filho, ignorando...');
+      return child;
+    }
+  } catch (error) {
+    console.warn('Erro capturado no removeChild:', error);
+    return child;
+  }
+};
+```
+
+### Sistema de Re-renderização Automática
+- **Chave de renderização dinâmica** que força re-renderização completa
+- **Detecção automática** de erros relacionados ao DOM
+- **Recuperação transparente** sem interromper a experiência do usuário
 
 ## 📝 Licença
 

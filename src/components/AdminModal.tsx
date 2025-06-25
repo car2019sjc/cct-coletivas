@@ -47,9 +47,17 @@ export const AdminModal: React.FC<AdminModalProps> = ({
     const a = document.createElement('a');
     a.href = url;
     a.download = 'conventions.json';
+    console.log('Criando elemento <a> para download');
     document.body.appendChild(a);
+    a.addEventListener('click', () => {
+      setTimeout(() => {
+        if (a.parentNode) {
+          document.body.removeChild(a);
+          console.log('Elemento <a> removido do DOM');
+        }
+      }, 0);
+    });
     a.click();
-    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
 
